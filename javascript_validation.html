@@ -1,0 +1,64 @@
+<html>
+<body>
+	<head>
+		<style>
+			body{
+margin: 0;
+padding: 0;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat; 
+font-family: sans-serif;
+}
+
+.registration{
+    width:640px;
+	height:250px;
+	background: #000;
+	color: #fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform:translate(-50%,-50%);
+	box-sizing: border-box;
+	
+}
+#grad1 {
+  background-image: linear-gradient(to bottom, #85BB65 0%,#008080 100%);
+}
+		</style>
+	</head>
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }   
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+}    
+</script> 
+<div class="registration"  id ="grad1"> 
+<form name="myform" method="post" action="#" onsubmit="return validateform()" > 
+<fieldset>
+          <legend>validation page</legend> 
+Name:       <input type="text" name="name"><br/><br/> <br/>
+Password:   <input type="password" name="password"><br/>  <br/> <br/>
+Email:      <input type="text" name="email" ><br/>  <br/> <br/>
+<input type="submit" value="register">  
+</fieldset>
+</form>
+</div> 
+</body>
+</html> 
